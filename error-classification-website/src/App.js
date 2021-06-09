@@ -26,7 +26,7 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://0.0.0.0:5000/get_next").then(response => {
+    fetch("http://127.0.0.1:5000/get_next").then(response => {
 
       if (response.status >= 200 && response.status < 300) {
         console.log("Sucessfully load the query data");
@@ -46,7 +46,7 @@ export default class App extends React.Component {
   handleClick() {
 
     console.log("onClickAction");
-    fetch("http://0.0.0.0:5000/get_next").then(response => {
+    fetch("http://127.0.0.1:5000/get_next").then(response => {
 
       if (response.status >= 200 && response.status < 300) {
         console.log("Sucessfully load the query data");
