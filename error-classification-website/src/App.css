@@ -1,0 +1,90 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+#Description {
+  margin: 10px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: large;
+  border-style: groove;
+  padding: 20px;
+  text-align: center;
+}
+
+.QueryComponent {
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.Problem-part {
+  margin: 10px;
+  margin-top: 20px;
+}
+
+.Hyp-label {
+  margin: 40px auto 30px auto;
+  text-align: center;
+}
+
+.NL-query {
+  margin: 10px;
+}
+
+.Table-information {
+  margin: 10px;
+}
+
+#submit-button {
+  margin: auto;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.SQL-query, .SQL-query-label, .GT-query {
+  margin: 10px;
+}
+
+Button.token {
+  margin-right: 2px;
+}
+
+.Question {
+  margin: 10px;
+  margin-top: 50px;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
