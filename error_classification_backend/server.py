@@ -33,7 +33,7 @@ def get_next():
         return jsonify(data)
     else:
         return "EOF"
-    
+
 
 if __name__ == "__main__":
     app.config['SECRET_KEY'] = 'super secret key'

@@ -3,6 +3,7 @@ import './App.css';
 import React from 'react';
 import { Container, Form, Row, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import BasicTable from './Table';
 import ButtonAppBar from './NavBar';
 import Token from './Token';
 import QueryComponent from './queryComponent';
@@ -101,7 +102,7 @@ export default class App extends React.Component {
 
   render() {
 
-    
+
 
     var sql_tokens = this.tokenize();
 
@@ -120,21 +121,30 @@ export default class App extends React.Component {
             <h5 style={{ "margin": "auto" }}><strong>Task description</strong></h5>
             <div style={{ "margin": "auto" }}>You will see multiple SQL queries automatically generated given a same natural language query. However, each of them may contain some errors. For each SQL query, please select the incorrect parts and briefly describe the errors that the SQL query has made.</div>
           </Row>
-          {this.state.query_data['predictions'].map((pred, index) => {
-            //Only return the false SQL hypotheses
-            if (pred['hyp_correct'] == 'False') {
-              hyp_index += 1;
-              return (
-                <div>
-                  <QueryComponent className="QueryComponent" index={hyp_index} nl_query={this.state.query_data['NL-query']} gt_query={this.state.query_data['GT']} sql_query={pred['SQL']} />
-                </div>
-              );
-            }
-            else {
-              return;
-            }
+          <Row>
+            <Col md={8}>
+              {this.state.query_data['predictions'].map((pred, index) => {
+                //Only return the false SQL hypotheses
+                if (pred['hyp_correct'] == 'False') {
+                  hyp_index += 1;
+                  return (
+                    <div>
+                      <QueryComponent className="QueryComponent" index={hyp_index} nl_query={this.state.query_data['NL-query']} gt_query={this.state.query_data['GT']} sql_query={pred['SQL']} />
+                    </div>
+                  );
+                }
+                else {
+                  return;
+                }
 
-          })}
+              })}
+            </Col>
+            <Col md={8}>
+              <BasicTable />
+            </Col>
+          </Row>
+
+
           <div id="submit-button">
             <Button variant="primary" onClick={this.handleClick}>Next</Button>
           </div>
